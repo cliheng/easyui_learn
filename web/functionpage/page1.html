@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 导入主题 -->
+    <link rel="stylesheet" href="../easy/theme/easyui.css" />
+    <!-- 导入图标 -->
+    <link rel="stylesheet" href="../easy/icon.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- easyui库文件 -->
+    <script type="text/javascript" src="../easy/jquery.min.js"></script>
+    <script type="text/javascript" src="../easy/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easy/easyui-lang-zh_CN.js"></script>	
+</head>
+<body>
+<script type="text/javascript">
+		$(function(){
+			var treedata = [{"text":"节点1","attributes":{"url":"a_page.html"}},
+			            	{"text":"节点2",
+						 	 "children":
+							 [
+							  {"text":"子节点1"},
+							  {"text":"子节点2"}
+							 ]
+						 	}];
+			
+			$("#datatree").tree({
+				data:treedata,
+				checkbox:true,
+				onClick:function(node){	// node节点点击事件
+					alert(node.attributes.url);
+				}
+			});	
+		});
+	</script>
+<h1>操作页面1</h1>
+<div id="datatree"></div>
+</body>
+</html>

@@ -6,29 +6,51 @@
 
     <!-- 导入主题 -->
     <link rel="stylesheet" href="easy/theme/easyui.css" />
+    <!-- 导入图标 -->
+    <link rel="stylesheet" href="easy/icon.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <!-- easyui库文件 -->
     <script type="text/javascript" src="easy/jquery.min.js"></script>
     <script type="text/javascript" src="easy/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="easy/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="easy/locale/easyui-lang-zh_CN.js"></script>
 
+	<script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
 </head>
 <body>
+	<!-- login dialog -->
     <div id="mydlg">
-        <form>
+        <form id="loginform" method="post">
             <table style="margin:50px 0px 0px 30px">
                 <tr>
                     <td>用户名</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="name" ></td>
                 </tr>
                 <tr>
                     <td>密码</td>
-                    <td><input type="password"></td>
+                    <td><input type="text" name="pwd" ></td>
                 </tr>
             </table>
-            
         </form>
     </div>
+    <div style="display:none">
+	<!-- header -->
+	<div class="header">
+		<div style="float:left">
+			<h1>XXX管理系统</h1>
+		</div>
+		<div style="float:right">
+			欢迎!<script>document.write(arr[1]);</script> <a>登出</a>
+		</div>
+	</div>
+	<!-- sider bar -->
+	<div class="siderbar">
+		<ul>
+			<li><a href="javascript:void(0)" onclick="switchpage('page1')">功能1</a></li>
+			<li><a href="javascript:void(0)" onclick="switchpage('page2')">功能2</a></li>
+		</ul>
+	</div>
+	</div>
 </body>
 </html>

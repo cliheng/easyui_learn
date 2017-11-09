@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 导入主题 -->
+    <link rel="stylesheet" href="../easy/theme/easyui.css" />
+    <!-- 导入图标 -->
+    <link rel="stylesheet" href="../easy/icon.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- easyui库文件 -->
+    <script type="text/javascript" src="../easy/jquery.min.js"></script>
+    <script type="text/javascript" src="../easy/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easy/easyui-lang-zh_CN.js"></script>	
+
+</head>
+<body>
+	<h1>操作页面2</h1>
+	<table id="dataTable"></table>
+	
+	<script type="text/javascript">
+		// json格式表格行记录集
+// 		var dataRows=[
+// 			{"id":1,"name":"张三","email":"zhangsan@123.net"},
+// 			{"id":2,"name":"李四","email":"lisi@123.net"},
+// 			{"id":3,"name":"王五","email":"wangwu@123.net"}];
+	
+		// 定制datagrid
+		$("#dataTable").datagrid({
+			
+			fitColumns:true,// 列按指定宽带填充table空白区域
+			url:"emplist",	// 服务器调用controller
+			pagination:true,// 显示分页工具栏
+			columns:[[
+				{field:"no", title:"编号", width:10},
+				{field:"firstName", title:"姓名", width:20},
+				{field:"birth", title:"出生日期", width:20}]] // 列信息
+		});
+	</script>
+</body>
+</html>
